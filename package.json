@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "youra": "powershell.exe -File ./run-youra-client.ps1",
+    "cy:open": "cypress open --e2e --browser chrome",
+    "cy:run": "cypress run --browser chrome",
+    "mocks": "mocks-server",
+    "mocks:ci": "mocks-server --no-plugins.inquirerCli.enabled --log=info",
+    "test:ci": "start-server-and-test mocks:ci http-get://localhost:3110 cy:run"
+  },
+  "devDependencies": {
+    "@mocks-server/cypress-commands": "6.1.1",
+    "@mocks-server/main": "4.0.1",
+    "cypress": "12.10.0",
+    "start-server-and-test": "2.0.0"
+  }
+}
